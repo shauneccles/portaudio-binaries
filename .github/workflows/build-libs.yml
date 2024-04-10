@@ -1,5 +1,6 @@
 name: Build PortAudio lib
 on:
+  workflow_dispatch:
   push:
     branches-ignore:
       - master
@@ -18,7 +19,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: PortAudio/portaudio
-          ref: v19.7.0
           path: portaudio
       - name: cmake configure
         run: |
